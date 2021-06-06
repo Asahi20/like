@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        content: 内容
+        user: ユーザー
+  time:
+    formats:
+      default: "%Y年%-m月%-d日(%a) %-H時%-M分%-S秒"
