@@ -1,6 +1,13 @@
 <div>
   <p>【メールアドレス】 <%= post.user.email %></p>
   <p>【内容】 <%= post.content %></p>
+  <p id="post-<%= post.id %>" >
+    <% if post.liked_by?(current_user) %>
+      <%= render "like", post: post %>
+    <% else %>
+      <%= render "dislike", post: post %>
+    <% end %>
+  </p>
   <p>
     <%= link_to "詳細", post %>
     <% if current_user.id == post.user_id %>

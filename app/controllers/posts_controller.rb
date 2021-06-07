@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[edit update destroy]
 
   def index
-    @posts = Post.includes(:user).order(:created_at)
+    @posts = Post.includes(:user, :likes).order(:created_at)
   end
 
   def new
